@@ -1,0 +1,328 @@
+/*-------------------    CABECERA    --------------------*/
+/* Header logo */
+.header-logo {
+    max-width: 100px;
+}
+
+.navbar {
+    background-color: #4F455E;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;                                          /* Mueve el logo un poco a la derecha */
+}
+
+/* Navbar enlaces */
+.nav-link {
+    color: #fff;
+    transition: color 0.3s ease;
+    margin-right: 1rem;                                         /* Añade espacio entre los elementos del menú */
+}
+
+.nav-link:hover {
+    color: #ddd;
+}
+
+.navbar-nav {
+    justify-content: center;
+}
+
+@media (max-width: 992px) {
+    .navbar-brand {
+        flex-grow: 1;
+        text-align: center;
+        margin-left: 0;                                         /* Elimina el margen cuando el menú está colapsado */
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .navbar{
+        background-color: #31204c9b;
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar-collapse {
+        background-color: #4f455e00;                            /* Color de fondo semitransparente */
+    }
+
+    .nav-item :hover{
+        animation: parpadeo 3s infinite;
+        background-color: rgba(95, 64, 124, 0.132);
+        backdrop-filter: blur(10px);
+        border-radius: 5px;
+        box-shadow: 
+        inset 0 0 12px rgba(138, 43, 226, 0.5),                 /* Sombra difusa con desenfoque */
+        inset 0 0 24px rgba(138, 43, 226, 0.5);                 /* Sombra difusa en la parte superior */
+    }
+    @keyframes parpadeo {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+
+}
+
+
+
+/* --------------------    CONTENIDO    --------------------*/
+
+/* ------ Noticias ------*/
+#news-section .titulo{
+    height: 50px;
+    width: 100%;
+    background-color: #0095ffd1;
+    border: 1px solid #4F455E;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+/* --- Estilo para la tarjeta --- */
+#news-section .card {
+    overflow: hidden;                                           /* Asegura que el contenido que se desborda sea ocultado */
+    position: relative;                                         /* Asegura que el zoom se mantenga dentro de la tarjeta */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Estilo para la imagen dentro de la tarjeta */
+#news-section .card-img-top {
+    transition: transform 0.3s ease-in-out;                     /* Suaviza la transición del zoom */
+    display: block;                                             /* Asegura que la imagen no tenga espacios blancos alrededor */
+    width: 100%;                                                /* Hace que la imagen ocupe todo el ancho del contenedor */
+    max-height: 200px;                                          /* Limita la altura máxima de la imagen */
+    min-height: 200px;                                          /* Limita la altura mínima de la imagen */
+    object-fit: cover;                                          /* Ajusta la imagen para que cubra el área del contenedor sin distorsionarse */
+}
+
+/* Efecto al hacer hover sobre la tarjeta */
+#news-section .card:hover .card-img-top {
+    transform: scale(1.1);                                      /* Amplía la imagen al 110% de su tamaño original */
+}
+
+/* Efecto de resalto para la tarjeta */
+#news-section .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);                  /* Sombra más intensa al hacer hover */
+}
+
+/* Asegura que el título esté centrado */
+#news-section .card-title {
+    text-align: center;
+}
+
+/* ------------------------------- Carrusel ------------------------------- */
+#carouselExampleDark .carousel-inner img {
+    object-fit: cover;                                          /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    max-height: 400px;                                          /* Ajusta la altura máxima del carrusel */
+}
+
+#carouselExampleDark .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);                       /* Fondo semitransparente para el texto */
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+
+/* ------------------------------- Oferta academica ------------------------------- */
+
+.academica{
+    height: 50px;
+    width: 100%;
+    background-color: #0095ffd1;
+    border: 1px solid #4F455E;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+/* Estilos para la tarjeta de presentación */
+.tarjeta-presentacion {
+    border: 1px solid #ddd;                                   /* Borde ligero para la tarjeta */
+    border-radius: 8px;                                         /* Bordes redondeados */
+    overflow: hidden;                                           /* Asegura que el contenido no se desborde */
+    background-color: #fff;                                   /* Fondo blanco para la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);                 /* Sombra ligera */
+    max-height: 165px;
+    min-height: 165px;
+    width: 100%;
+    position: relative;                                         /* Necesario para posicionar el icono de fondo */
+}
+
+/* Estilos para el icono de fondo */
+.icono-fondo {
+    position: absolute;                                         /* Posiciona el icono de fondo en relación a la tarjeta */
+    top: 20px;                                                  /* Ajusta la distancia desde el borde inferior */
+    right: 10px;                                                /* Ajusta la distancia desde el borde derecho */
+    font-size: 5rem;                                            /* Tamaño del icono de fondo */
+    color: rgba(0, 0, 0, 0.1);                                /* Color del icono de fondo con opacidad para que no opaque el texto */
+    pointer-events: none;                                       /* Asegura que el icono no interfiera con la interacción del contenido */
+}
+
+/* Estilos para el contenedor del contenido de la tarjeta */
+.contenido-tarjeta {
+    position: relative;                                         /* Necesario para el posicionamiento del contenido sobre el fondo */
+    display: flex;                                              /* Flexbox para alinear el icono y el contenido */
+    flex-direction: row;                                        /* Coloca el icono y el contenido en una fila */
+    border-bottom: 1px solid #ddd;                            /* Borde inferior para separar el título del detalle */
+    padding: 10px;                                              /* Espaciado alrededor del contenido */
+    background-color: #fff;                                   /* Fondo blanco para el contenido */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;                                                 /* Asegura que el contenido esté sobre el fondo */
+}
+
+/* Colores individuales de la tarjetas */
+.color-1 { background-color: #d68b8b; }
+.color-2 { background-color: #a6c8e3; }
+.color-3 { background-color: #dab68b; }
+.color-4 { background-color: #b6eab6; }
+.color-5 { background-color: #f7a8a8; }
+.color-6 { background-color: #b3d8e6; }
+.color-7 { background-color: #d8b3e6; }
+.color-8 { background-color: #b6eab6; }
+
+/* Estilos para el icono */
+.icono {
+    flex: 0 0 auto;                                             /* El icono no crecerá ni se reducirá */
+    margin-right: 13px;                                         /* Margen derecho para separar el icono del contenido */
+}
+
+/* Estilos para el contenido principal */
+.contenido {
+    flex: 1;                                                    /* El contenido se expande para llenar el espacio restante */
+}
+
+/* Estilos para el título */
+.titulo {
+    margin: 0; /* Margen alrededor del título */
+    color: #333; /* Color del texto */
+}
+
+/* Estilos para el detalle */
+.detalle {
+    padding: 10px;                                              /* Espaciado alrededor del detalle */
+    position: relative;                                         /* Necesario para el posicionamiento del detalle sobre el fondo */
+}
+
+.detalle a{
+    text-decoration: none;
+    color: #000000;
+    :hover{
+        color: burlywood;
+    }
+}
+
+.detalle-item {
+    margin-bottom: 5px;                                         /* Margen inferior para separar los elementos de detalle */
+    font-size: 0.7em;                                           /* Tamaño de fuente para el título */
+}
+
+
+
+
+
+
+
+
+/* --------------------    PIE DE PAGINA    --------------------*/
+    .container-fluid.bg-dark {
+    background: #000000;
+    color: white;
+    }
+
+    .footer-titulo {
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .footer-lista {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .footer-icono {
+        margin-right: 10px;
+    }
+
+    /* ------    Redes sociales   ------*/
+    .social-lista .social-enlace {
+        text-decoration: none;
+        color: white;
+        margin-right: 10px;
+        display: block;
+    }
+
+    .footer-lista li:nth-child(1) a:hover {
+        color: #0095ff;                                         /* color azul claro */
+        text-shadow: 0 0 10px rgba(0, 153, 248, 0.736);         /* sombra de texto Facebook */
+    }
+
+    .footer-lista li:nth-child(2) a:hover {
+        color: #ffffff;                                         /* color celeste */
+        text-shadow: 0 0 10px rgb(245, 245, 245);               /* sombra de texto X-Twitter */
+    }
+
+    .footer-lista li:nth-child(3) a:hover {
+        color: #fc5151;                                         /* color rosado claro */
+        text-shadow: 0 0 10px rgba(249, 70, 70, 0.7);           /* sombra de texto Instagram */
+    }
+
+    .footer-lista li:nth-child(4) a:hover {
+        color: #49e1ff;                                         /* color azul claro */
+        text-shadow: 0 0 10px rgba(79, 235, 255, 0.7);          /* sombra de texto LinkedIn */
+    }
+
+    .social-enlace .fab {
+        margin-right: 10px;
+    }
+
+    /* ------    Plataformas   ------*/
+
+    .footer-lista2 {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .plataforma-lista .plataforma-enlace {
+        text-decoration: none;
+        color: white;
+        margin-right: 10px;
+        display: block;
+    }
+
+    .footer-lista2 li:nth-child(1) a:hover {
+        color: #9cffaa;                                         /* Verde claro */
+        text-shadow: 0 0 10px rgba(151, 255, 167, 0.7);         /* Sombra de texto para Facebook */
+    }
+
+    .footer-lista2 li:nth-child(2) a:hover {
+        color: #6af5ff;                                         /* Azul medio celeste */
+        text-shadow: 0 0 10px rgba(131, 241, 255, 0.7);         /* Sombra de texto para Twitter */
+    }
+
+    .footer-lista2 li:nth-child(3) a:hover {
+        color: #fff64e;                                         /* Amarillo */
+        text-shadow: 0 0 10px rgba(246, 249, 87, 0.7);          /* Sombra de texto para Instagram */
+    }
+
+    .footer-lista2 li:nth-child(4) a:hover {
+        color: #ffabf1;                                         /* Violeta claro */
+        text-shadow: 0 0 10px rgba(250, 162, 253, 0.7);         /* Sombra de texto para LinkedIn */
+    }
+
+    .plataforma-enlace  i{
+        margin-right: 10px;
+    }
+
+
+
